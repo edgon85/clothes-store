@@ -1,0 +1,32 @@
+@import './navbar-actions.css';
+
+.navbar {
+  padding-inline: 1.25rem;
+  padding-block: 1.5rem;
+}
+
+.navbar .content {
+  block-size: inherit;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+.navbar .content .logo img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 500px) {
+  .navbar {
+    padding-inline: 0px;
+  }
+
+  .navbar .content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
