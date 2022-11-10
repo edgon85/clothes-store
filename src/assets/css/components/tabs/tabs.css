@@ -1,0 +1,24 @@
+.tabs-filter {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow-y: auto;
+  block-size: 3.75rem;
+  align-items: center;
+}
+
+.tab {
+  border-radius: 3.125rem;
+  background-color: var(--grey);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tab.tab-selected {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

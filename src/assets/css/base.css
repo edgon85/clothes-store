@@ -33,5 +33,11 @@ h1, p {
 }
 
 .wrapper {
-  padding-inline: 5.1875rem;
+  padding-inline: 1rem;
+}
+
+@media screen and (min-width: 700px){
+  .wrapper {
+    padding-inline: 5.1875rem;
+  }
 }

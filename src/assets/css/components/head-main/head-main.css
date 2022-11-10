@@ -1,13 +1,20 @@
-.head-main{
-    margin-block-start: 2.5rem;
-    margin-block-end: 1.5rem;
+.head-main {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 
-.head-title{
-    font: var(--subtitle-22bold);
-    margin-bottom: 1rem;
+.head-title {
+  font: var(--subtitle-22bold);
+  margin-bottom: 1rem;
 }
 
 .head-subtitle {
-    font: var(--body-16regular);
+  font: var(--body-16regular);
+}
+
+@media screen and (min-width: 500px) {
+  .head-main {
+    margin-block-start: 2.5rem;
+    margin-block-end: 1.5rem;
+  }
 }
