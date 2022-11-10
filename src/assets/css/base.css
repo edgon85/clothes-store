@@ -27,3 +27,11 @@ body {
   max-width: 1366px;
   margin: auto;
 }
+
+h1, p {
+  margin: 0;
+}
+
+.wrapper {
+  padding-inline: 5.1875rem;
+}

@@ -1,0 +1,13 @@
+.head-main{
+    margin-block-start: 2.5rem;
+    margin-block-end: 1.5rem;
+}
+
+.head-title{
+    font: var(--subtitle-22bold);
+    margin-bottom: 1rem;
+}
+
+.head-subtitle {
+    font: var(--body-16regular);
+}
