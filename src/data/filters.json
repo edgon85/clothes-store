@@ -1,0 +1,86 @@
+{
+    "filters": [
+        {
+            "id": "colors",
+            "name": "Colores",
+            "items": [
+                {
+                    "id": "rojo",
+                    "name": "Rojo",
+                    "available": true
+                },
+                {
+                    "id": "verde",
+                    "name": "Verde",
+                    "available": true
+                },
+                {
+                    "id": "azul",
+                    "name": "Azul",
+                    "available": true
+                },
+                {
+                    "id": "blanco",
+                    "name": "Blanco",
+                    "available": true
+                },
+                {
+                    "id": "marron",
+                    "name": "Marron",
+                    "available": false
+                },
+                {
+                    "id": "negro",
+                    "name": "Negro",
+                    "available": true
+                }
+            ]
+        },
+        {
+            "id": "tallas",
+            "name": "Tallas",
+            "items": [
+                {
+                    "id": "xxs",
+                    "name": "XXS",
+                    "available": true
+                },
+                {
+                    "id": "xs",
+                    "name": "XS",
+                    "available": true
+                },
+                {
+                    "id": "x",
+                    "name": "X",
+                    "available": true
+                },
+                {
+                    "id": "s",
+                    "name": "S",
+                    "available": true
+                },
+                {
+                    "id": "m",
+                    "name": "M",
+                    "available": true
+                },
+                {
+                    "id": "l",
+                    "name": "L",
+                    "available": true
+                },
+                {
+                    "id": "xl",
+                    "name": "XL",
+                    "available": false
+                },
+                {
+                    "id": "xxl",
+                    "name": "XLL",
+                    "available": true
+                }
+            ]
+        }
+    ]
+}
