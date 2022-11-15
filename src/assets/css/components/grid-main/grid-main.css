@@ -1,0 +1,22 @@
+.cards {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto;
+
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+
+@media screen and (min-width: 500px) {
+  .cards {
+    grid-template-columns: auto auto;
+
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 700px) {
+  .cards {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,17 @@
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-footer .description {
+  font: var(--body-14regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-footer .price {
+  font: var(--body-16bold);
+  white-space: nowrap;
+}

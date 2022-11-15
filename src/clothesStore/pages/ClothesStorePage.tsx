@@ -1,38 +1,6 @@
 import { Dropdown, Navbar, Tab } from '../../ui';
-import { HeadMain } from '../components';
+import { GridSection, HeadMain } from '../components';
 import { filters as filterData } from '../../data/filters.json';
-
-/* const itemsData = [
-  {
-    id: 'xxs',
-    name: 'XXS',
-    value: 'xxs',
-    isSelected: false,
-  },
-  {
-    id: 'xx',
-    name: 'XX',
-    value: 'xx',
-    isSelected: false,
-  },
-  {
-    id: 'x',
-    name: 'X',
-    value: 'x',
-    isSelected: true,
-  },
-  {
-    id: 's',
-    name: 'S',
-    value: 's',
-    isSelected: false,
-  },
-  {
-    id: 'xs',
-    name: 'XS',
-    value: 'xs',
-  },
-]; */
 
 export const ClothesStorePage = () => {
   return (
@@ -54,6 +22,7 @@ export const ClothesStorePage = () => {
           </li>
           <h6 className="total-articles">268 Artículos</h6>
         </section>
+        <GridSection />
       </main>
     </>
   );

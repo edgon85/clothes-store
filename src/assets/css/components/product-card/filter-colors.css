@@ -1,0 +1,23 @@
+.filter-colors {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+
+.product-color {
+  block-size: 1.5rem;
+  inline-size: 1.5rem;
+  background: red;
+  border-radius: 50%;
+  position: relative;
+  opacity: 0.8;
+}
+
+.product-color:hover{
+  opacity: 1;
+}
+
+.product-color.color-selected {
+  opacity: 1;
+}

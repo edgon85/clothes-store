@@ -1,0 +1,30 @@
+@import './filter-colors.css';
+@import './card-footer.css';
+
+.card-product {
+    inline-size: 24rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card-product img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.card-product .title {
+  font: var(--body-16regular);
+  margin-block-start: 0.5rem;
+}
+
+@media screen and (min-width: 500px) {
+  .card-product {
+    inline-size: 14.375rem;
+  }
+}
+@media screen and (min-width: 1224px) {
+  .card-product {
+    inline-size: 24rem;
+  }
+}
