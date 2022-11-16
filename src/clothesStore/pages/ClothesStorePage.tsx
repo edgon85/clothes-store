@@ -1,4 +1,4 @@
-import { Dropdown, Navbar, Tab } from '../../ui';
+import { Dropdown, Navbar, SwitchStock, Tab } from '../../ui';
 import { GridSection, HeadMain } from '../components';
 import { filters as filterData } from '../../data/filters.json';
 
@@ -15,11 +15,14 @@ export const ClothesStorePage = () => {
           <Tab title="Vermudas" isSelected={false} />
         </section>
         <section className="dropdowns">
-          <li className="dropdowns-switch">
-            {filterData.map((filter) => (
-              <Dropdown key={filter.id} filter={filter} />
-            ))}
-          </li>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <li className="dropdowns-switch">
+              {filterData.map((filter) => (
+                <Dropdown key={filter.id} filter={filter} />
+              ))}
+            </li>
+            <SwitchStock />
+          </div>
           <h6 className="total-articles">268 Artículos</h6>
         </section>
         <GridSection />
