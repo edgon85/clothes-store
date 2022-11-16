@@ -8,4 +8,6 @@ export type product = {
   categoryId: number;
   rating: number;
   detail: string;
+  coverImage: string;
+  currency: string;
 };
