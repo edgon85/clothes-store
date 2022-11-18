@@ -1,10 +1,18 @@
+import { Category } from '../../../types';
+
 type Props = {
-  title: string;
+  category: Category;
   isSelected: boolean;
+  onCategoryClick: (category: Category | null) => void;
 };
 
-export const Tab = ({ title, isSelected }: Props) => {
+export const Tab = ({ category, onCategoryClick, isSelected }: Props) => {
   return (
-    <div className={`tab ${isSelected ? 'tab-selected' : ''}`}>{title}</div>
+    <div
+      onClick={() => onCategoryClick(category)}
+      className={`tab${isSelected ? ' tab-selected' : ''}`}
+    >
+      {category.name}
+    </div>
   );
 };

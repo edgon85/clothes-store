@@ -3,14 +3,12 @@ import api from '../../data/api';
 import { product } from '../../types';
 import { ProductCard } from '../../ui';
 
-export const GridSection = () => {
-  const [products, setProducts] = useState<product[]>([]);
+type Props = {
+  products: product[];
+};
 
-  useEffect(() => {
-    api.product.list().then((resp) => {
-      setProducts(resp);
-    });
-  }, []);
+export const GridSection = ({ products }: Props) => {
+  //
 
   return (
     <section className="cards">

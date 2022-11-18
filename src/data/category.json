@@ -1,0 +1,28 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "Todo"
+        },
+        {
+            "id": 1,
+            "name": "Sudaderas"
+        },
+        {
+            "id": 2,
+            "name": "Pantalones"
+        },
+        {
+            "id": 3,
+            "name": "Vermudas"
+        },
+        {
+            "id": 4,
+            "name": "Camisas"
+        },
+        {
+            "id": 12,
+            "name": "Nachos"
+        }
+    ]
+}

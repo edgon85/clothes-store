@@ -1,32 +1,63 @@
-import { Dropdown, Navbar, SwitchStock, Tab } from '../../ui';
-import { GridSection, HeadMain } from '../components';
-import { filters as filterData } from '../../data/filters.json';
+import { useEffect, useMemo, useState } from 'react';
+import { Category, product } from '../../types';
+import { Navbar } from '../../ui';
+import {
+  CategorySection,
+  FilterSeccion,
+  GridSection,
+  HeadMain,
+} from '../components';
+import api from '../../data/api';
 
 export const ClothesStorePage = () => {
+  const [products, setProducts] = useState<product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [category, setCategory] = useState<Category | null>({
+    id: 0,
+    name: 'Todo',
+  });
+
+  const matches = useMemo(
+    () =>
+      products.filter((product) => {
+        if (category?.id === 0) {
+          return products;
+        } else {
+          return categories ? product.categoryId === category?.id : true;
+        }
+      }),
+    [category]
+  );
+
+  useEffect(() => {
+    api.product.list().then((resp) => {
+      setProducts(resp);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.categorie.list().then((resp) => setCategories(resp));
+  }, []);
+
   return (
     <>
       <Navbar />
       <main className="wrapper">
         <HeadMain />
-        <section className="tabs-filter">
-          <Tab title="Todo" isSelected={true} />
-          <Tab title="Sudaderas" isSelected={false} />
-          <Tab title="pantalones" isSelected={false} />
-          <Tab title="Vermudas" isSelected={false} />
-        </section>
-        <section className="dropdowns">
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <li className="dropdowns-switch">
-              {filterData.map((filter) => (
-                <Dropdown key={filter.id} filter={filter} />
-              ))}
-            </li>
-            <SwitchStock />
-          </div>
-          <h6 className="total-articles">268 Artículos</h6>
-        </section>
-        <GridSection />
+        {/* ··············· */}
+        <CategorySection
+          categories={categories}
+          onClickCategory={setCategory}
+          category={category}
+        />
+        {/* ··············· */}
+        <FilterSeccion products={category?.id === 0 ? products : matches} />
+        {/* ··············· */}
+        <GridSection products={category?.id === 0 ? products : matches} />
       </main>
     </>
   );
 };
+/* 
+categories ? product.categoryId === category?.id : products
+*/
