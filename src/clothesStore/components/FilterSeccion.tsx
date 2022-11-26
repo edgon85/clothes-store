@@ -1,58 +1,36 @@
-import { useEffect, useMemo, useState } from 'react';
-import { filters as filterData } from '../../data/filters.json';
-import { Filtrado, Product } from '../../types';
-import { Dropdown, SwitchStock } from '../../ui';
+import { useState } from 'react';
+import { Filter, Filtrado, Product } from '../../types';
+import { Dropdown } from '../../ui';
 
 type Props = {
-  products: Product[];
+  filterData: Filter;
   onChange: (filtrado: Filtrado) => void;
+  typeFilter: string;
 };
 
-export const FilterSeccion = ({ products, onChange }: Props) => {
-  // const [filterSelected, setFilterSelected] = useState<string[]>([]);
+export const FilterSeccion = ({ onChange, filterData, typeFilter }: Props) => {
   const [filterSelected, setFilterSelected] = useState<Set<string>>(new Set());
 
-  /*  const colors = useMemo(() => {
-    const buffer: Set<string> = new Set();
-
-    for (let product of products) {
-      buffer.add(product.color);
-    }
-
-    return Array.from(buffer);
-  }, [products]); */
-
-  const handleChangeColor = (isChecked: boolean, color: string) => {
+  const handleChangeColor = (isChecked: boolean, idFilter: string) => {
     const draft = structuredClone(filterSelected);
 
     if (isChecked) {
-      draft.add(color);
+      draft.add(idFilter);
     } else {
-      draft.delete(color);
+      draft.delete(idFilter);
     }
 
-    onChange(draft.size ? (product) => draft.has(product.color) : null);
+    onChange(
+      draft.size
+        ? (product) => draft.has(product[typeFilter as keyof Product])
+        : null
+    );
     setFilterSelected(draft);
   };
 
   return (
-    <section className="dropdowns">
-      <div style={{ display: 'flex', gap: '1.5rem' }}>
-        <ul>
-          <li className="dropdowns-switch">
-            {filterData.map((filter) => (
-              <Dropdown
-                key={filter.id}
-                filter={filter}
-                onClickFilter={handleChangeColor}
-              />
-            ))}
-          </li>
-        </ul>
-
-        <SwitchStock />
-      </div>
-      <h6 className="total-articles">{products.length} Artículos</h6>
-    </section>
+    <>
+      <Dropdown onClickFilter={handleChangeColor} filter={filterData} />
+    </>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Category, Filtrado, Product } from '../../types';
-import { Navbar } from '../../ui';
+import { Navbar, SwitchStock } from '../../ui';
 import {
   CategorySection,
   FilterSeccion,
@@ -8,6 +8,7 @@ import {
   HeadMain,
 } from '../components';
 import api from '../../data/api';
+import { filters as filterData } from '../../data/filters.json';
 
 /* type Filters = {
   color: null | ((product: Product) => boolean);
@@ -81,12 +82,27 @@ export const ClothesStorePage = () => {
           category={category}
         />
         {/* ··············· */}
-        <FilterSeccion
-          onChange={(filter: Filtrado) =>
-            setFilters((filters) => ({ ...filters, color: filter }))
-          }
-          products={filterMatches}
-        />
+        <section className="dropdowns">
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <FilterSeccion
+              filterData={filterData[0]}
+              typeFilter="color"
+              onChange={(filter: Filtrado) =>
+                setFilters((filters) => ({ ...filters, color: filter }))
+              }
+            />
+            {/* ··············· */}
+            <FilterSeccion
+              typeFilter="size"
+              filterData={filterData[1]}
+              onChange={(filter: Filtrado) =>
+                setFilters((filters) => ({ ...filters, size: filter }))
+              }
+            />
+            <SwitchStock />
+          </div>
+          <h6 className="total-articles">{filterMatches.length} Artículos</h6>
+        </section>
         {/* ··············· */}
         <GridSection products={filterMatches} />
       </main>
