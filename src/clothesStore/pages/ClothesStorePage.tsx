@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Category, product } from '../../types';
+import { Category, Filtrado, Product } from '../../types';
 import { Navbar } from '../../ui';
 import {
   CategorySection,
@@ -9,25 +9,25 @@ import {
 } from '../components';
 import api from '../../data/api';
 
+/* type Filters = {
+  color: null | ((product: Product) => boolean);
+  price: null | ((product: Product) => boolean);
+  talla: null | ((product: Product) => boolean);
+};
+ */
+
 export const ClothesStorePage = () => {
-  const [products, setProducts] = useState<product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [category, setCategory] = useState<Category | null>({
     id: 0,
     name: 'Todo',
   });
-
-  const matches = useMemo(
-    () =>
-      products.filter((product) => {
-        if (category?.id === 0) {
-          return products;
-        } else {
-          return categories ? product.categoryId === category?.id : true;
-        }
-      }),
-    [category]
-  );
+  const [filters, setFilters] = useState<Record<string, null | Filtrado>>({
+    color: null,
+    price: null,
+    tallas: null,
+  });
 
   useEffect(() => {
     api.product.list().then((resp) => {
@@ -38,6 +38,36 @@ export const ClothesStorePage = () => {
   useEffect(() => {
     api.categorie.list().then((resp) => setCategories(resp));
   }, []);
+
+  const matchesCategories = useMemo(
+    () =>
+      products.filter((product) => {
+        if (category?.id === 0) {
+          return products;
+        } else {
+          return categories ? product.categoryId === category?.id : true;
+        }
+      }),
+    [category, products]
+  );
+
+  const filterMatches = useMemo(() => {
+    const filtersToApply = Object.values(filters).filter(Boolean);
+
+    let filterMatch = [];
+
+    if (category?.id === 0) {
+      filterMatch = products;
+    } else {
+      filterMatch = matchesCategories;
+    }
+
+    for (const filter of filtersToApply) {
+      filterMatch = filterMatch.filter(filter!);
+    }
+
+    return filterMatch;
+  }, [category, filters, products]);
 
   return (
     <>
@@ -51,9 +81,14 @@ export const ClothesStorePage = () => {
           category={category}
         />
         {/* ··············· */}
-        <FilterSeccion products={category?.id === 0 ? products : matches} />
+        <FilterSeccion
+          onChange={(filter: Filtrado) =>
+            setFilters((filters) => ({ ...filters, color: filter }))
+          }
+          products={filterMatches}
+        />
         {/* ··············· */}
-        <GridSection products={category?.id === 0 ? products : matches} />
+        <GridSection products={filterMatches} />
       </main>
     </>
   );

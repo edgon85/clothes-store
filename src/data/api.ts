@@ -1,10 +1,10 @@
-import { Category, product } from '../types';
+import { Category, Product } from '../types';
 import { products } from './product.json';
 import { categories } from './category.json';
 
 const api = {
   product: {
-    list: async (): Promise<product[]> => {
+    list: async (): Promise<Product[]> => {
       return products;
     },
   },

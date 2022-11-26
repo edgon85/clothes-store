@@ -5,9 +5,10 @@ import { DropdownItem } from './';
 
 type Props = {
   filter: Filter;
+  onClickFilter: (isChecked: boolean, color: string) => void;
 };
 
-export const Dropdown = ({ filter }: Props) => {
+export const Dropdown = ({ filter, onClickFilter }: Props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const { items } = filter;
 
@@ -45,7 +46,11 @@ export const Dropdown = ({ filter }: Props) => {
       </button>
       <ul className={`menu${isCollapsed ? ' menu-open' : ''}`}>
         {items?.map((filter) => (
-          <DropdownItem key={filter.id} filter={filter} />
+          <DropdownItem
+            key={filter.id}
+            filter={filter}
+            onClick={onClickFilter}
+          />
         ))}
       </ul>
     </div>

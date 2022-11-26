@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CheckeEnabledIcon, UncheckedEnabledIcon } from '../../../assets/icons';
 import { Filter } from '../../../types';
 
 type Props = {
   filter: Filter;
-  onClick?: (filter: Filter | null) => void;
+  onClick: (isChecked: boolean, color: string) => void;
 };
 
 export const DropdownItem = ({ filter, onClick }: Props) => {
-  const [isSelecte, setIsSelecte] = useState(false);
-  const [filtered, setFiltered] = useState<Filter[]>([]);
+  const [isSelecte, setIsSelecte] = useState(true);
 
-  const handleClick = (filter: Filter) => {
+  const handleClick = () => {
     setIsSelecte((prev) => !prev);
+    onClick(isSelecte, filter.id);
   };
 
   return (
-    <li onClick={() => handleClick(filter)}>
-      {isSelecte ? (
+    <li onClick={handleClick}>
+      {!isSelecte ? (
         <CheckeEnabledIcon size="22" />
       ) : (
         <UncheckedEnabledIcon size="22" />

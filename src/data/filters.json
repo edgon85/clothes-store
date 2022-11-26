@@ -25,13 +25,28 @@
                     "available": true
                 },
                 {
-                    "id": "marron",
-                    "name": "Marron",
+                    "id": "cyan",
+                    "name": "Cyan",
                     "available": false
                 },
                 {
                     "id": "negro",
                     "name": "Negro",
+                    "available": true
+                },
+                {
+                    "id": "gris",
+                    "name": "Gris",
+                    "available": true
+                },
+                {
+                    "id": "amarillo",
+                    "name": "Amarillo",
+                    "available": true
+                },
+                {
+                    "id": "morado",
+                    "name": "Morado",
                     "available": true
                 }
             ]
