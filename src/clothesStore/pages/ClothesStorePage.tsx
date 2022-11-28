@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Category, Filtrado, Product } from '../../types';
-import { Navbar, SwitchStock } from '../../ui';
+import { SwitchStock } from '../../ui';
 import {
   CategorySection,
   FilterSeccion,
@@ -72,7 +72,6 @@ export const ClothesStorePage = () => {
 
   return (
     <>
-      <Navbar />
       <main className="wrapper">
         <HeadMain />
         {/* ··············· */}
