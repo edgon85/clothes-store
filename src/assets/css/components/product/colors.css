@@ -1,0 +1,40 @@
+.product-info .colors h4 {
+    font: var(--body-16regular);
+    margin-block-end: .5rem;
+ }
+ 
+ .product-info .colors .color-content {
+     display: flex;
+     gap: .5rem;
+ }
+ 
+ .product-info .colors .color-content .color-item {
+     inline-size: 26px;
+     block-size: 26px;
+     background-color: gray;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+ 
+ .bg-1{
+     background-color: #101014 !important;
+ }
+ .bg-2{
+     background-color: #C62C2F !important;
+ }
+ .bg-3{
+     background-color: #94B7CD !important;
+ }
+ .bg-4{
+     background-color: #295698 !important;
+ }
+ .bg-5{
+     background-color: #E5DBED !important;
+ }
+ .bg-6{
+     background-color: #C958A5 !important;
+ }
+ .bg-7{
+     background-color: #2A6477 !important;
+ }
+ 

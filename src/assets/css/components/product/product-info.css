@@ -1,0 +1,23 @@
+@import './colors.css';
+@import './size.css';
+@import './button-add.css';
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-info .title {
+  font: var(--subtitle-22medium);
+}
+
+.product-info .price {
+  font: var(--body-16bold);
+}
+
+@media screen and (min-width: 500px) {
+  .product-info {
+    max-inline-size: 25.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+.images-grid {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  gap: 1.5rem;
+}
+
+
+.images-grid img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+@media screen and (min-width: 500px){
+    .images-grid{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1.5rem; 
+    }
+}

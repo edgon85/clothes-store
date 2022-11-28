@@ -1,0 +1,8 @@
+.btn-add{
+    background-color: var(--green-2);
+    border: none;
+    color: var(--white);
+    block-size: 3.325rem;
+    cursor: pointer;
+    font: var(--body-16regular);
+}

@@ -1,0 +1,26 @@
+.product-detail .size h4 {
+  font: var(--body-16regular);
+  margin-block-end: 0.5rem;
+}
+
+.product-detail .size .size-content {
+  display: flex;
+  gap: 0.5rem;
+}
+.product-detail .size .size-item {
+  block-size: 3rem;
+  inline-size: 3rem;
+  border: 1px solid var(--grey-3);
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font: var(--body-16regular);
+}
+
+.product-detail .size .size-item:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
