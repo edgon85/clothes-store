@@ -1,0 +1,35 @@
+@import './header-cart.css';
+@import './card-cart.css';
+@import './payform.css';
+@import './button-pay.css';
+
+.cart-page {
+  
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.cart-page .content {
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .cart-page {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .cart-page .content {
+    position: absolute;
+    /* max-inline-size: 29.25rem; */
+    right: 0;
+    width: 29.5rem;
+    height: 100vh;
+    padding: 2.5rem;
+  }
+}

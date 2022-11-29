@@ -1,0 +1,58 @@
+.card-item {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 1rem;
+}
+
+.card-item .image {
+  max-width: 108px;
+}
+
+.card-item .image img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-info h3 {
+  font: var(--body-16regular);
+}
+
+.card-info h2 {
+  font: var(--body-16bold);
+}
+
+
+.card-info .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info .actions .counter {
+    box-shadow: 0px 11px 29px rgba(0, 0, 0, 0.05);
+border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.card-info .actions .counter > button {
+    border: none;
+    width: 24px;
+    height: 24px;
+    background: white;
+    font: var(--body-16bold);
+    cursor: pointer;
+}
+
+.card-info .actions .delete {
+    cursor: pointer;
+}

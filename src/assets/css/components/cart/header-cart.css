@@ -1,0 +1,16 @@
+.header-cart {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 1.5rem;
+}
+
+.header-cart .head-info h6 {
+  text-align: center;
+  font: var(--subtitle-22medium);
+  margin-block-end: 0.5rem;
+  color: #333333;
+}
+.header-cart .head-info span {
+  font: var(--body-16regular);
+  color: #333333;
+}

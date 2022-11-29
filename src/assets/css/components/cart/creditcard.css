@@ -1,0 +1,63 @@
+.credit-card label {
+  font: var(--body-14regular);
+}
+
+.input-card-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-block: 0.8rem;
+  border: 1px solid rgba(60, 66, 87, 0.12);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
+.input-card-number input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+.input-card-number .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.input-card-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding-block: .5rem; */
+  border: 1px solid rgba(60, 66, 87, 0.12);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
+.input-card-date .cvc {
+  flex: 1;
+  display: flex;
+  flex: row;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgba(60, 66, 87, 0.12);
+}
+
+.input-card-date .cvc input {
+  padding-inline-start: 0.5rem;
+}
+
+.input-card-date input {
+  flex: 1;
+  border: none;
+  padding-block: 0.8rem;
+  outline: none;
+}
