@@ -4,7 +4,6 @@
 @import './button-pay.css';
 
 .cart-page {
-  
   position: fixed;
   top: 0;
   right: 0;
@@ -12,6 +11,7 @@
   left: 0;
   background-color: white;
   overflow-y: scroll;
+  display: none;
 }
 
 .cart-page .content {
@@ -32,4 +32,8 @@
     height: 100vh;
     padding: 2.5rem;
   }
+}
+
+.show-checkout {
+  display: block;
 }

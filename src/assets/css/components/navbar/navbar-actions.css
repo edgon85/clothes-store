@@ -39,6 +39,7 @@
 
     display: flex;
     position: relative;
+    cursor: pointer;
 
 }
 .cart-counter{
