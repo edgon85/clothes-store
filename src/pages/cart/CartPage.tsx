@@ -8,7 +8,6 @@ export const CartPage = () => {
 
   const { isModalOpen } = modalCheckoutState;
 
-  console.log(isModalOpen);
   return (
     // <div className="cart-page show-checkout">
     <div className={`cart-page${isModalOpen ? ' show-checkout' : ''}`}>

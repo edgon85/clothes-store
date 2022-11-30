@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import api from '../../data/api';
-import { product } from '../../types';
+import { Product } from '../../types';
 import { ProductCard } from '../../ui';
 
 type Props = {
-  products: product[];
+  products: Product[];
 };
 
 export const GridSection = ({ products }: Props) => {
