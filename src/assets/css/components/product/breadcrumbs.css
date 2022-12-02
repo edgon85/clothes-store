@@ -1,0 +1,27 @@
+.breadcrumbs ul {
+    list-style: none;
+    padding: 0;
+    font: var(--caption-12regular);
+}
+
+
+.breadcrumbs ul {
+    display: flex;
+    gap: .5rem;
+}
+.breadcrumbs ul li a {
+    text-decoration: none;
+    color: var(--grey-3);
+    position: relative;
+    
+}
+
+.breadcrumbs ul li a::after{
+    content: '/';
+    position: absolute;
+    margin-left: 2px;
+} 
+
+.breadcrumbs ul li a span{
+    color: var(--black);
+}

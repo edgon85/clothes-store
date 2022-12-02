@@ -1,6 +1,7 @@
 @import './colors.css';
 @import './size.css';
 @import './button-add.css';
+@import './breadcrumbs.css';
 
 .product-info {
   display: flex;

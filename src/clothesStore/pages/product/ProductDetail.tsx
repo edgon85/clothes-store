@@ -1,17 +1,24 @@
 import image4 from '../../../assets/images/products/detail-4.jpg';
 import image1 from '../../../assets/images/products/detail-1.jpg';
 import image2 from '../../../assets/images/products/detail-2.jpg';
-import image3 from '../../../assets/images/products/detail-3.jpg';
 import image5 from '../../../assets/images/products/detail-5.jpg';
 import image6 from '../../../assets/images/products/detail-6.jpg';
 import { Product } from '../../../types';
-import { useParams } from 'react-router-dom';
-import { useMemo, useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
 import api from '../../../data/api';
+import { useCart } from '../../../hooks';
 
 export const ProductDetail = () => {
   const [product, setProduct] = useState<Product>();
   const { id } = useParams();
+  const { pathname } = useLocation();
+
+  const { cartItems, addToCart, deleteToCart } = useCart();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useMemo(() => {
     api.product.list().then((resp) => {
@@ -22,7 +29,7 @@ export const ProductDetail = () => {
   }, [id]);
 
   const handleAddProductToCart = (product: Product) => {
-    console.log(product);
+    addToCart(product);
   };
 
   return (
@@ -44,19 +51,19 @@ export const ProductDetail = () => {
               <img src={image5} alt="" />
             </div>
             <div className="product-info">
-              {/* <div className="breadcrumbs">
-            <ul>
-            <li>
-            <a href="#">Tienda</a>
-            </li>
-            <li>
-            <a href="#">Hombres - sudaderas</a>
-            </li>
-            <li>
-            <a href="#">Sudadera 365 Signature</a>
-            </li>
-            </ul>
-          </div> */}
+              <nav className="breadcrumbs">
+                <ul>
+                  <li>
+                    <Link to="/home">Tienda</Link>
+                  </li>
+                  <li>
+                    <Link to="/home">Hombres - sudaderas</Link>
+                  </li>
+                  <li>
+                    <span>Sudadera 365 Signature</span>
+                  </li>
+                </ul>
+              </nav>
               <h2 className="title">{product?.name}</h2>
               <h3 className="price">
                 ${product?.price} {product?.currency}
@@ -88,12 +95,21 @@ export const ProductDetail = () => {
                 </div>
               </div>
 
-              <button
-                className="btn-add"
-                onClick={() => handleAddProductToCart(product)}
-              >
-                Añadir al carrito
-              </button>
+              {cartItems.some((prod) => prod.product.id === product.id) ? (
+                <button
+                  className="btn-danger"
+                  onClick={() => deleteToCart(product)}
+                >
+                  Eliminar del carrito
+                </button>
+              ) : (
+                <button
+                  className="btn-add"
+                  onClick={() => handleAddProductToCart(product)}
+                >
+                  Añadir al carrito
+                </button>
+              )}
 
               <div className="description">
                 <div className="desc-nav">

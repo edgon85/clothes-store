@@ -29,7 +29,7 @@
     /* max-inline-size: 29.25rem; */
     right: 0;
     width: 29.5rem;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2.5rem;
   }
 }

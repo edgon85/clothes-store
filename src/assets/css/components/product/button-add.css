@@ -6,3 +6,12 @@
     cursor: pointer;
     font: var(--body-16regular);
 }
+
+.btn-danger{
+    background-color: var(--red);
+    border: none;
+    color: var(--white);
+    block-size: 3.325rem;
+    cursor: pointer;
+    font: var(--body-16regular);
+}
