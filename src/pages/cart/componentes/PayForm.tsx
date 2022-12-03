@@ -3,10 +3,21 @@ import american from '../../../assets/images/cards-icons/american-expres.svg';
 import discover from '../../../assets/images/cards-icons/discover.svg';
 import mastercard from '../../../assets/images/cards-icons/mastercard.svg';
 import cvc from '../../../assets/images/cards-icons/cvc-card.png';
+import { FormEvent } from 'react';
+import { useModal } from '../../../hooks';
 
 export const PayForm = () => {
+  const { showPayModal, toggleCheckout } = useModal();
+
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    toggleCheckout();
+    showPayModal();
+  };
+
   return (
-    <form className="payform">
+    <form className="payform" onSubmit={handleSubmit}>
       <div className="form-control">
         <label htmlFor="">Nombre</label>
         <input className="input-control" type="text" />

@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../context';
 
 export const useCart = () => {
-  const { cartItems, addToCart, deleteToCart, updateItemCart } =
+  const { cartItems, addToCart, deleteToCart, updateItemCart, clearCart } =
     useContext(CartContext);
 
   const handleIncrement = (qty: number, prodId: string) => {
@@ -23,5 +23,6 @@ export const useCart = () => {
     // updateItemCart,
     handleIncrement,
     handleDecrement,
+    clearCart,
   };
 };

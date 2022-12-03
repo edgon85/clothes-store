@@ -29,6 +29,13 @@ export const Cartprovider = ({ children }: Props) => {
     });
   };
 
+  const clearCart = () => {
+    dispatch({
+      type: 'clearCart',
+      payload: null,
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -36,6 +43,7 @@ export const Cartprovider = ({ children }: Props) => {
         addToCart,
         deleteToCart,
         updateItemCart,
+        clearCart,
       }}
     >
       {children}

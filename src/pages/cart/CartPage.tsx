@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ModalCheckoutContext } from '../../context';
 import { useCart } from '../../hooks';
 import { CardItemCart, PayForm } from './componentes';
@@ -8,6 +8,14 @@ export const CartPage = () => {
   const { modalCheckoutState } = useContext(ModalCheckoutContext);
   const { isModalOpen } = modalCheckoutState;
   const { cartItems } = useCart();
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isModalOpen]);
 
   return (
     // <div className="cart-page show-checkout">

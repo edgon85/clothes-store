@@ -1,6 +1,8 @@
 import { ModalInitalState } from '../../types';
 
-type modalActions = { type: 'openModal'; payload: boolean };
+type modalActions =
+  | { type: 'openModal'; payload: boolean }
+  | { type: 'showModal'; payload: boolean };
 
 export const modalCheckoutReducer = (
   state: ModalInitalState,
@@ -11,6 +13,11 @@ export const modalCheckoutReducer = (
       return {
         ...state,
         isModalOpen: action.payload,
+      };
+    case 'showModal':
+      return {
+        ...state,
+        showModal: action.payload,
       };
 
     default:

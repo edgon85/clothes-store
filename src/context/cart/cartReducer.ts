@@ -3,6 +3,7 @@ import { CartItem, Product } from '../../types';
 type CartActions =
   | { type: 'addToCart'; payload: Product }
   | { type: 'deleteToCart'; payload: Product }
+  | { type: 'clearCart'; payload: null }
   | { type: 'updateItemCart'; payload: { _id: string; _qty: number } };
 
 export const cartReducer = (state: any, action: CartActions) => {
@@ -37,6 +38,12 @@ export const cartReducer = (state: any, action: CartActions) => {
             ? (item.quantity = action.payload._qty)
             : item.quantity
         ),
+      };
+
+    case 'clearCart':
+      return {
+        ...state,
+        cartItems: [],
       };
 
     default:

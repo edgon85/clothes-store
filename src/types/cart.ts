@@ -10,4 +10,5 @@ export type InitilStateCart = {
   addToCart: (item: Product) => void;
   deleteToCart: (item: Product) => void;
   updateItemCart: (cartItemId: string, qty: number) => void;
+  clearCart: () => void;
 };
