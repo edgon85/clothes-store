@@ -41,7 +41,7 @@ export const ProductDetail = () => {
           <div className="content">
             <div className="images-grid">
               <img
-                src={`/src/assets/images/products/${product?.coverImage}.jpg`}
+                src={new URL(`../../../assets/images/products/${product?.coverImage}.jpg`, import.meta.url).href}
                 alt=""
               />
               <img src={image6} alt="" />

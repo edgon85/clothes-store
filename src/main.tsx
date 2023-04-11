@@ -7,10 +7,10 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ModalCheckoutProvider>
-      <Cartprovider>
-        <ClothesStoreApp />
-      </Cartprovider>
-    </ModalCheckoutProvider>
+  <ModalCheckoutProvider>
+    <Cartprovider>
+      <ClothesStoreApp />
+    </Cartprovider>
+  </ModalCheckoutProvider>
   </React.StrictMode>
 );

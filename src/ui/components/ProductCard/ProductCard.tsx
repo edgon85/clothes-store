@@ -7,7 +7,10 @@ type Props = {
 };
 
 export const ProductCard = ({ product }: Props) => {
-  const imagePath = `/src/assets/images/products/${product.coverImage}.jpg`;
+  const imgUrl = new URL(
+    `../../../assets/images/products/${product.coverImage}.jpg`,
+    import.meta.url
+  ).href;
 
   const navigate = useNavigate();
 
@@ -19,7 +22,7 @@ export const ProductCard = ({ product }: Props) => {
     <div className="card-product" onClick={() => handleProductDetail(product)}>
       {/* <div className="card-content"> */}
       <div className="image">
-        <img src={imagePath} alt={product.name} />
+        <img src={imgUrl} alt={product.name} />
       </div>
       <h6 className="title">{product.name}</h6>
       <div className="filter-colors">

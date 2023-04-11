@@ -8,16 +8,16 @@ type Props = {
 };
 
 export const DropdownItem = ({ filter, onClick }: Props) => {
-  const [isSelecte, setIsSelecte] = useState(true);
+  const [isSelected, setIsSelected] = useState(true);
 
   const handleClick = () => {
-    setIsSelecte((prev) => !prev);
-    onClick(isSelecte, filter.id);
+    setIsSelected((prev) => !prev);
+    onClick(isSelected, filter.id);
   };
 
   return (
     <li onClick={handleClick}>
-      {!isSelecte ? (
+      {!isSelected ? (
         <CheckeEnabledIcon size="22" />
       ) : (
         <UncheckedEnabledIcon size="22" />
